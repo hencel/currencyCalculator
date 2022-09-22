@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ExchangeTableComponent } from './exchange-table/exchange-table.component';
 
 const routes: Routes = [
-  { path: 'first-component', component: ExchangeTableComponent },
+  { path: 'currency-table', component: ExchangeTableComponent },
   { path: '**', component: ExchangeTableComponent },
 ];
 
