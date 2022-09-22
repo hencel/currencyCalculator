@@ -1,1 +1,16 @@
-<p>exchange-table works!</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nazwa waluty</th>
+            <th>Kod</th>
+            <th>Kurs</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of currencyTable">
+            <td>{{data.currency}}</td>
+            <td>{{data.code}}</td>
+            <td>{{data.mid}}</td>
+        </tr>
+    </tbody>
+</table>
