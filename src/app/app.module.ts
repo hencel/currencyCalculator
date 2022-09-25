@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ExchangeTableComponent } from './exchange-table/exchange-table.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ExchangeTableComponent
+    ExchangeTableComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,
