@@ -9,12 +9,11 @@ import { CurrencyApi } from '../interface/interface';
 })
 export class ExchangeTableComponent implements OnInit {
 
-  tableAAddress: string = 'https://api.nbp.pl/api/exchangerates/tables/A/?format=json';
   rawExchangeTable: any;
   currencyTable: Array<CurrencyApi> = [];
 
   constructor(private service: ConfigService) {
-    this.service.serviceApi(this.tableAAddress).subscribe((res) => {
+    this.service.serviceApi().subscribe((res) => {
       this.rawExchangeTable = res;
       this.currencyTable = this.rawExchangeTable[0].rates;
     })

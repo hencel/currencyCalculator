@@ -5,10 +5,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'any',
 })
 export class ConfigService {
+  url: string = 'https://api.nbp.pl/api/exchangerates/tables/A/?format=json';
   constructor(private http: HttpClient) { }
 
-  serviceApi(url: string) {
-    return this.http.get(url)
+  serviceApi() {
+    return this.http.get(this.url);
   }
 
 }
