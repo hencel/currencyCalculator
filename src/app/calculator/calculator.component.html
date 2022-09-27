@@ -1,1 +1,35 @@
-<p>calculator works!</p>
+<section class="container">
+    <div class="row" *ngIf="calcState == 0, else calculator">
+        <h2>Wybierz walutę:</h2>
+        <div class="col-12 d-flex flex-wrap">
+            <div class="currencyBtn" 
+            *ngFor="let data of currencyTable"
+            (click)="showCalculator(data.mid, data.code)">
+                {{data.code}}
+            </div>
+        </div>
+    </div>
+    <ng-template #calculator>
+        <div class="btn btn-secondary mt-2" (click)="hideCalculator()">Cofnij</div>
+        <div class="row">
+            <h2>Kurs NBP z dnia {{date}}</h2>
+            <div class="d-flex flex-wrap">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control"
+                    [(ngModel)]="plnRate" 
+                    value="1" 
+                    (keyup)="onSetPLN()" />
+                    <label class="input-group-text" for="inputGroupSelect02">PLN</label>
+                </div>
+        
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" 
+                    [(ngModel)]="currencyRate" 
+                    (keyup)="onSetCurrency()"  />
+                    <label class="input-group-text" for="inputGroupSelect02">{{code}}</label>
+                </div>
+                  
+            </div>
+        </div>
+    </ng-template>
+</section>

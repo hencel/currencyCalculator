@@ -1,0 +1,15 @@
+.currencyBtn {
+    color: greenyellow;
+    border: 1px solid greenyellow;
+    padding: 5px 10px;
+    margin: 10px;
+    font-size: 2rem;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+    &:hover {
+        color: initial;
+        background-color: greenyellow;
+    }
+}
