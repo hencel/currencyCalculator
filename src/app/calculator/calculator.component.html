@@ -1,8 +1,11 @@
 <section class="container">
     <div class="row" *ngIf="calcState == 0, else calculator">
-        <h2>Wybierz walutę:</h2>
         <div class="col-12 d-flex flex-wrap">
+            <h2 class="mt-3">Wybierz walutę:</h2>
+        </div>
+        <div class="col-12 p-0 d-flex flex-wrap">
             <div class="currencyBtn" 
+            data-bs-toggle="tooltip" data-bs-placement="top" title="{{data.currency}}"
             *ngFor="let data of currencyTable"
             (click)="showCalculator(data.mid, data.code)">
                 {{data.code}}
@@ -10,23 +13,23 @@
         </div>
     </div>
     <ng-template #calculator>
-        <div class="btn btn-secondary mt-2" (click)="hideCalculator()">Cofnij</div>
-        <div class="row">
+        <div class="btn btn-secondary mt-3" (click)="hideCalculator()">Cofnij</div>
+        <div class="row calc mt-3">
             <h2>Kurs NBP z dnia {{date}}</h2>
-            <div class="d-flex flex-wrap">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control"
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-row mb-3">
+                    <input type="number" class="calc--input"
                     [(ngModel)]="plnRate" 
                     value="1" 
                     (keyup)="onSetPLN()" />
-                    <label class="input-group-text" for="inputGroupSelect02">PLN</label>
+                    <label class="calc--label" for="inputGroupSelect02">PLN</label>
                 </div>
         
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" 
+                <div class="d-flex flex-row mb-3">
+                    <input type="number" class="calc--input" 
                     [(ngModel)]="currencyRate" 
                     (keyup)="onSetCurrency()"  />
-                    <label class="input-group-text" for="inputGroupSelect02">{{code}}</label>
+                    <label class="calc--label" for="inputGroupSelect02">{{code}}</label>
                 </div>
                   
             </div>
