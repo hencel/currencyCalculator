@@ -1,3 +1,9 @@
 table td, table th {
     color: #fff;
 }
+.table tr {
+    transition: .3s;
+    &:hover {
+        background-color: darken(rgb(47, 79, 144), 10%);
+    }
+}
