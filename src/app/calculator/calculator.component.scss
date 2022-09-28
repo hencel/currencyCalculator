@@ -1,15 +1,43 @@
-.currencyBtn {
-    color: greenyellow;
-    border: 1px solid greenyellow;
+$mainColor: greenyellow;
+@mixin inputStyles {
+    color: $mainColor;
+    border: 1px solid $mainColor;
     padding: 5px 10px;
-    margin: 10px;
     font-size: 2rem;
+}
+.currencyBtn {
+    @include inputStyles();
+    margin: 10px;
     width: 100px;
     text-align: center;
     cursor: pointer;
     transition: .3s;
     &:hover {
         color: initial;
-        background-color: greenyellow;
+        background-color: $mainColor;
+    }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.calc {
+    .calc--input {
+        @include inputStyles();
+        background-color: transparent;
+        &:active {
+            @include inputStyles();
+        }
+    }
+    .calc--label {
+        display: flex;
+        align-items: center;
+        color: $mainColor;
+        font-size: 2rem;
+        margin-left: 10px;
     }
 }
