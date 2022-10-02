@@ -9,8 +9,14 @@ table th {
 }
 .table tbody tr {
     transition: .3s;
+    td {
+        transition: .3s;
+    }
     &:hover {
         background-color: darken(rgb(47, 79, 144), 15%);
+        td {
+            color: greenyellow;
+        }
     }
     &:nth-of-type(even) {
         background-color: darken(rgb(47, 79, 144), 5%);
